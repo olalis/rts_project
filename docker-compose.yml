@@ -1,0 +1,25 @@
+version: "3"
+services:
+  instance1:
+    build:
+      context: instance1
+      dockerfile: Dockerfile
+    volumes:
+      - ./volume:/root/rts/storage:rw
+      - ./instance1/volume1:/root/rts/programs:rw
+  instance2:
+    build:
+      context: instance2
+      dockerfile: Dockerfile
+    volumes:
+      - ./instance2/volume2:/root/rts/programs:rw
+      - ./volume:/root/rts/storage:rw
+  instance3:
+    build:
+      context: instance3
+      dockerfile: Dockerfile
+    volumes:
+      - ./instance3/volume3:/root/rts/programs:rw
+
+volumes:
+  volume:

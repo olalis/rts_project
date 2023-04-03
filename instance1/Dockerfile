@@ -1,0 +1,15 @@
+FROM ubuntu:20.04
+
+RUN apt-get update
+RUN apt-get install -y python3
+RUN apt-get install -y nano
+
+RUN cd root
+RUN mkdir rts
+RUN cd rts
+RUN mkdir programs
+RUN mkdir storage
+RUN apt-get install -y python3-pip
+RUN pip install datetime
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
